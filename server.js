@@ -56,5 +56,5 @@ app.use('/', function(clientRequest, clientResponse) {
   });    
 
 
-  app.listen(80)
+  app.listen(process.env.PORT || 5000)
   console.log('Running on 0.0.0.0:80')
