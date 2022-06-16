@@ -56,5 +56,5 @@ app.use('/', function(clientRequest, clientResponse) {
   });    
 
 
-  app.listen(3000)
-  console.log('Running on 0.0.0.0:3000')
+  app.listen(80)
+  console.log('Running on 0.0.0.0:80')
