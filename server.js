@@ -22,14 +22,13 @@ app.use('/', function(clientRequest, clientResponse) {
       hostname: parsedHost,
       port: parsedPort,
       path: clientRequest.url,
-      method: "Get",
       headers: {
         'User-Agent': clientRequest.headers['user-agent'],
         "Authorization" : "Bot OTgwMTg3MTM2OTg2ODYxNTc4.GU8amV.VH-nOh7QdSp_1sDS1iNq-Ah3X5KQTRsuL_5-v4",
       }
     };  
   
-    var serverRequest = parsedSSL.request(options, function(serverResponse) { 
+    var serverRequest = http.get(options, function(serverResponse) { 
       var body = '';   
       if (String(serverResponse.headers['content-type']).indexOf('text/html') !== -1) {
         serverResponse.on('data', function(chunk) {
